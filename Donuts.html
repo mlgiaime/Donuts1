@@ -1,0 +1,29 @@
+<html>
+<head>
+	<title>Donuts are bad, mmmkay</title>
+</head>
+<body>
+	<script type="text/javascript">
+		var DonutStore = function(hours, min, max, avg, location) {
+			this.hours = hours;
+			this.min = min;
+			this.max = max;
+			this.avg = avg;
+			this.location = location;
+			this.custo = Math.floor(Math.random() * (max - min + 1)) + min;
+			this.donutsPerHour = function() {
+				return this.custo * avg;
+			};
+			this.donutsPerDay = function() {
+				return this.donutsPerHour() * hours;
+			};
+			console.log("location: " + this.location + " Donuts per hour " + this.donutsPerHour() + " Donuts per day " + this.donutsPerDay());
+		}
+		var ballard = new DonutStore(12, 8, 58, 3.75, "Ballard");
+		var downtown = new DonutStore(16, 8, 43, 4.5, "Downtown");
+		var capHill = new DonutStore(14, 4, 37, 2, "Capitol Hill");
+		var southLU = new DonutStore(12, 9, 23, 6.33, "South Lake Union");
+		var wedgwood = new DonutStore(15, 2, 28, 1.25, "Wedgwood");
+	</script>
+</body>
+</html>
